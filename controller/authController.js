@@ -2,7 +2,7 @@
 const { UserModel } = require("../model/userModel");
 const sha = require("sha256");
 const jwt = require("jsonwebtoken");
-const secret = process.env || require("../secret");
+const secret = require("../secret") || process.env;
 
 const { getOTP, setExpiry, mailSender } = require("../helper/helper");
 
@@ -17,6 +17,7 @@ async function loginController(req, res) {
       //if user exist
       if (user) {
         //if user password matches
+        console.log(secret);
         let encryptedPassword = sha.x2(password);
         if (user.password == encryptedPassword) {
           // making JWT TOKEN
