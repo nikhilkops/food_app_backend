@@ -16,6 +16,8 @@ app.use("/api/v1/plan", planRouter);
 app.use(function (req, res) {
   res.send("<h1>Backend API</h1>");
 });
-app.listen(3000, function () {
+
+const port = process.env.PORT || 3000;
+app.listen(port, function () {
   console.log("Server Started at Port 3000");
 });

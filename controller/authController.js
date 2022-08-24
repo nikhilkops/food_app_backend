@@ -2,7 +2,8 @@
 const { UserModel } = require("../model/userModel");
 const sha = require("sha256");
 const jwt = require("jsonwebtoken");
-const secret = require("../secret");
+const secret = process.env || require("../secret");
+
 const { getOTP, setExpiry, mailSender } = require("../helper/helper");
 
 async function loginController(req, res) {

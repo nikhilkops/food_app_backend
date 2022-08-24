@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // to import mongoose library
-const secret = require("../secret");
-let dbLink = secret.DB_LINK;
+const dbLink = process.env.DB_LINK || require("../secret").DB_LINK;
+
 //link to k connect db to application
 //it gives us promise of connecting the database either it connects it or not
 

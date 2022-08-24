@@ -1,6 +1,6 @@
 const otpGenerator = require("otp-generator"); // to generate OTP
 const jwt = require("jsonwebtoken"); // to genertae and verify web token
-const secret = require("../secret");
+const secret = process.env || require("../secret");
 const nodemailer = require("nodemailer");
 
 function getOTP() {
