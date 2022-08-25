@@ -11,7 +11,7 @@ const {
 
 planRouter
   .route("/")
-  .get(protectRoute, getAllPlansController)
+  .get(getAllPlansController)
   .post(protectRoute, createPlanController);
 
 //fir user
